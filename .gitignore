@@ -1,0 +1,10 @@
+target/
+*.log
+*.iml
+.idea/
+.vscode/
+*.class
+.mvn/wrapper/maven-wrapper.jar
+*.DS_Store
+# H2 file storage
+.data/
