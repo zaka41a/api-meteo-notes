@@ -25,34 +25,6 @@
 
 ---
 
-## 📁 Structure du projet
-
-api-meteo-notes
-├─ src
-│ ├─ main
-│ │ ├─ java/com/example/api_meteo_notes
-│ │ │ ├─ App.java # point d’entrée Spring Boot
-│ │ │ ├─ WeatherController.java # GET /meteo
-│ │ │ ├─ common/GlobalExceptionHandler.java
-│ │ │ └─ notes/
-│ │ │ ├─ Note.java # @Entity
-│ │ │ ├─ NoteRepository.java # JpaRepository
-│ │ │ ├─ NoteService.java # logique CRUD
-│ │ │ ├─ NoteNotFoundException.java # 404 métier
-│ │ │ └─ dto/
-│ │ │ ├─ NoteCreateRequest.java
-│ │ │ └─ NoteUpdateRequest.java
-│ │ └─ resources/
-│ │ ├─ static/index.html # UI intégrée
-│ │ └─ application.properties # config
-│ └─ test/java/com/example/api_meteo_notes # tests JUnit (ex: MeteoTest.java)
-├─ .gitignore
-├─ Dockerfile
-└─ pom.xml
-
-
----
-
 ## ⚙️ Prérequis
 
 - **Java JDK 17+** (Temurin/Adoptium recommandé)
