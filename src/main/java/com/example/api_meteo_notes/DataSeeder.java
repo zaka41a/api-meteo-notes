@@ -6,6 +6,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Seed de données au démarrage (dev).
+ * CommandLineRunner s’exécute après le bootstrap de l’appli.
+ */
 @Configuration
 public class DataSeeder {
   @Bean

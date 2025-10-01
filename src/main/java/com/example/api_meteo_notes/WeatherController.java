@@ -6,6 +6,9 @@ import java.time.LocalDate;
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * Démo simple : endpoint GET /meteo qui renvoie une météo aléatoire (JSON).
+ */
 @RestController
 public class WeatherController {
   private static final String[] CONDITIONS = {

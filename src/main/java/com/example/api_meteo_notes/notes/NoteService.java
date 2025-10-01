@@ -7,6 +7,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * Couche métier. @Transactional => une transaction par méthode.
+ * Les entités modifiées sont flush/commit à la fin.
+ */
 @Service
 @Transactional
 public class NoteService {
@@ -19,7 +23,7 @@ public class NoteService {
     Note n = new Note();
     n.setTitre(req.titre());
     n.setContenu(req.contenu());
-    return repo.save(n);
+    return repo.save(n); // persist immédiat (id généré)
   }
 
   public Note one(Long id){
@@ -27,10 +31,10 @@ public class NoteService {
   }
 
   public Note update(Long id, NoteUpdateRequest req){
-    Note n = one(id);
-    n.setTitre(req.titre());
+    Note n = one(id);            // charge l’entité managée par le contexte de persistance
+    n.setTitre(req.titre());     // modification traquée
     n.setContenu(req.contenu());
-    return n; // @Transactional fera le flush
+    return n; // pas besoin de save() grâce à @Transactional (flush à la fin)
   }
 
   public void delete(Long id){
